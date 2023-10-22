@@ -1,0 +1,192 @@
+1. In your home directory, create sets of empty practice files 
+Create 6 files with names of the form songsX.mp3.
+Create 6 files with names of the form snapX.jpg.
+Create 6 files with names of the form filmX.avi.
+In each set, replace X with the numbers 1 through 6.
+
+Poniks-MacBook-Air:desktop ponikjain$ pwd
+/Users/ponikjain/desktop
+Poniks-MacBook-Air:desktop ponikjain$ cd ..
+Poniks-MacBook-Air:~ ponikjain$ pwd
+/Users/ponikjain
+Poniks-MacBook-Air:~ ponikjain$ touch songs1.mp3 songs2.mp3 songs3.mp3 songs4.mp3 songs5.mp3 songs6.mp3
+Poniks-MacBook-Air:~ ponikjain$ ls
+Applications				Public					myscript.sh
+Collect					bash_profile				native
+Desktop					caches					songs1.mp3
+Documents				cdac form.pdf				songs2.mp3
+Downloads				daemon					songs3.mp3
+Library					eclipse					songs4.mp3
+Movies					eclipse-workspace			songs5.mp3
+Music					go					songs6.mp3
+Pictures				marketwatch_symbol_202203051626.sql	wrapper
+Postman					marketwatch_symbol_202203051632.csv
+Poniks-MacBook-Air:~ ponikjain$ touch snap1.jpg snap2.jpg snap3.jpg snap4.jpg snap5.jpg snap6.jpg
+Poniks-MacBook-Air:~ ponikjain$ ls
+Applications				caches					snap3.jpg
+Collect					cdac form.pdf				snap4.jpg
+Desktop					daemon					snap5.jpg
+Documents				eclipse					snap6.jpg
+Downloads				eclipse-workspace			songs1.mp3
+Library					go					songs2.mp3
+Movies					marketwatch_symbol_202203051626.sql	songs3.mp3
+Music					marketwatch_symbol_202203051632.csv	songs4.mp3
+Pictures				myscript.sh				songs5.mp3
+Postman					native					songs6.mp3
+Public					snap1.jpg				test.txt
+bash_profile				snap2.jpg				wrapper
+Poniks-MacBook-Air:~ ponikjain$ touch film1.avi film2.avi film3.avi film4.avi film5.avi film6.avi
+Poniks-MacBook-Air:~ ponikjain$ ls
+Applications				daemon					snap1.jpg
+Collect					eclipse					snap2.jpg
+Desktop					eclipse-workspace			snap3.jpg
+Documents				film1.avi				snap4.jpg
+Downloads				film2.avi				snap5.jpg
+Library					film3.avi				snap6.jpg
+Movies					film4.avi				songs1.mp3
+Music					film5.avi				songs2.mp3
+Pictures				film6.avi				songs3.mp3
+Postman					go					songs4.mp3
+Public					marketwatch_symbol_202203051626.sql	songs5.mp3
+bash_profile				marketwatch_symbol_202203051632.csv	songs6.mp3
+caches					myscript.sh				test.txt
+cdac form.pdf				native					wrapper
+
+-----------------------------------------------------------------------------------------------------
+
+2. From your home directory,
+Move songs file into your Music subdirectory.
+Move snap file into your Pictures subdirectory.
+Move your movie files into Videos subdirectory  
+
+
+Poniks-MacBook-Air:~ ponikjain$ ls
+Applications				daemon					snap1.jpg
+Collect					eclipse					snap2.jpg
+Desktop					eclipse-workspace			snap3.jpg
+Documents				film1.avi				snap4.jpg
+Downloads				film2.avi				snap5.jpg
+Library					film3.avi				snap6.jpg
+Movies					film4.avi				songs1.mp3
+Music					film5.avi				songs2.mp3
+Pictures				film6.avi				songs3.mp3
+Postman					go					songs4.mp3
+Public					marketwatch_symbol_202203051626.sql	songs5.mp3
+bash_profile				marketwatch_symbol_202203051632.csv	songs6.mp3
+caches					myscript.sh				test.txt
+cdac form.pdf				native					wrapper
+Poniks-MacBook-Air:~ ponikjain$ mv -t Music songs1.mp3 songs2.mp3 songs3.mp3 songs4.mp3 songs5.mp3 songs6.mp3
+mv: illegal option -- t
+usage: mv [-f | -i | -n] [-hv] source target
+       mv [-f | -i | -n] [-v] source ... directory
+Poniks-MacBook-Air:~ ponikjain$ mv songs1.mp3 songs2.mp3 songs3.mp3 songs4.mp3 songs5.mp3 songs6.mp3 Music
+Poniks-MacBook-Air:~ ponikjain$ ls
+Applications				caches					marketwatch_symbol_202203051626.sql
+Collect					cdac form.pdf				marketwatch_symbol_202203051632.csv
+Desktop					daemon					myscript.sh
+Documents				eclipse					native
+Downloads				eclipse-workspace			snap1.jpg
+Library					film1.avi				snap2.jpg
+Movies					film2.avi				snap3.jpg
+Music					film3.avi				snap4.jpg
+Pictures				film4.avi				snap5.jpg
+Postman					film5.avi				snap6.jpg
+Public					film6.avi				wrapper
+bash_profile				go
+Poniks-MacBook-Air:~ ponikjain$ cd Music
+Poniks-MacBook-Air:Music ponikjain$ ls
+Audio Music Apps	Music			songs1.mp3		songs3.mp3		songs5.mp3
+GarageBand		iTunes			songs2.mp3		songs4.mp3		songs6.mp3
+Poniks-MacBook-Air:Music ponikjain$ cd ..
+Poniks-MacBook-Air:~ ponikjain$ mv snap1.jpg snap2.jpg snap3.jpg snap4.jpg snap5.jpg snap6.jpg Pictures
+Poniks-MacBook-Air:~ ponikjain$ cd Pictures
+Poniks-MacBook-Air:Pictures ponikjain$ ls
+Photo Booth Library	snap2.jpg		snap4.jpg		snap6.jpg
+snap1.jpg		snap3.jpg		snap5.jpg
+Poniks-MacBook-Air:Pictures ponikjain$ cd ..
+Poniks-MacBook-Air:~ ponikjain$ mv film1.avi film2.avi film3.avi film4.avi film5.avi film6.avi Movies
+Poniks-MacBook-Air:~ ponikjain$ cd Movies
+Poniks-MacBook-Air:Movies ponikjain$ ls
+TV			film1.avi		film3.avi		film5.avi		iMovie Theater.theater
+anydesk			film2.avi		film4.avi		film6.avi
+Poniks-MacBook-Air:Movies ponikjain$ cd ..
+Poniks-MacBook-Air:~ ponikjain$ 
+
+--------------------------------------------------------------------------------------------------------
+
+3. Create 3 subdirectories for organizing your files named friends,family,work
+
+Poniks-MacBook-Air:~ ponikjain$ mkdir friends
+Poniks-MacBook-Air:~ ponikjain$ mkdir family
+Poniks-MacBook-Air:~ ponikjain$ mkdir work
+Poniks-MacBook-Air:~ ponikjain$ ls
+Applications				Postman					friends
+Collect					Public					go
+Desktop					bash_profile				marketwatch_symbol_202203051626.sql
+Documents				caches					marketwatch_symbol_202203051632.csv
+Downloads				cdac form.pdf				myscript.sh
+Library					daemon					native
+Movies					eclipse					work
+Music					eclipse-workspace			wrapper
+Pictures				family
+--------------------------------------------------------------------------------------------------------
+
+4. Copy files (all types ) containing numbers 1 and 2 to the friends folder.
+    Copy files (all types) containing numbers 3 and 4 to the family folder.
+    Copy files (all types) containing numbers 5 and 6 to the work folder.
+
+
+Poniks-MacBook-Air:~ ponikjain$ cd Music
+Poniks-MacBook-Air:Music ponikjain$ ls
+Audio Music Apps	Music			songs1.mp3		songs3.mp3		songs5.mp3
+GarageBand		iTunes			songs2.mp3		songs4.mp3		songs6.mp3
+Poniks-MacBook-Air:Music ponikjain$ mv songs1.mp3 songs2.mp3 ../friends
+Poniks-MacBook-Air:Music ponikjain$ cd ..
+Poniks-MacBook-Air:~ ponikjain$ pwd
+/Users/ponikjain
+Poniks-MacBook-Air:~ ponikjain$ cd Music
+Poniks-MacBook-Air:Music ponikjain$ mv songs3.mp3 songs4.mp3 ../family
+Poniks-MacBook-Air:Music ponikjain$ ls
+Audio Music Apps	Music			songs5.mp3
+GarageBand		iTunes			songs6.mp3
+Poniks-MacBook-Air:Music ponikjain$ mv songs5.mp3 songs6.mp3 ../work
+Poniks-MacBook-Air:Music ponikjain$ ls
+Audio Music Apps	GarageBand		Music			iTunes
+Poniks-MacBook-Air:Music ponikjain$ cd ..
+Poniks-MacBook-Air:~ ponikjain$ cd Pictures
+Poniks-MacBook-Air:Pictures ponikjain$ ls
+Photo Booth Library	snap2.jpg		snap4.jpg		snap6.jpg
+snap1.jpg		snap3.jpg		snap5.jpg
+Poniks-MacBook-Air:Pictures ponikjain$ mv snap1.jpg snap2.jpg ../friends
+Poniks-MacBook-Air:Pictures ponikjain$ mv snap3.jpg snap4.jpg ../family
+Poniks-MacBook-Air:Pictures ponikjain$ mv snap5.jpg snap6.jpg ../work
+Poniks-MacBook-Air:Pictures ponikjain$ ls
+Photo Booth Library
+Poniks-MacBook-Air:Pictures ponikjain$ cd ..
+Poniks-MacBook-Air:~ ponikjain$ cd Movies
+Poniks-MacBook-Air:Movies ponikjain$ ls
+TV			film1.avi		film3.avi		film5.avi		iMovie Theater.theater
+anydesk			film2.avi		film4.avi		film6.avi
+Poniks-MacBook-Air:Movies ponikjain$ mv film1.avi film2.avi ../friends
+Poniks-MacBook-Air:Movies ponikjain$ mv film3.avi film4.avi ../family
+Poniks-MacBook-Air:Movies ponikjain$ mv film5.avi film6.avi ../work
+Poniks-MacBook-Air:Movies ponikjain$ ls
+TV			anydesk			iMovie Theater.theater
+Poniks-MacBook-Air:Movies ponikjain$ cd ..
+Poniks-MacBook-Air:~ ponikjain$ cd friends
+Poniks-MacBook-Air:friends ponikjain$ ls
+film1.avi	film2.avi	snap1.jpg	snap2.jpg	songs1.mp3	songs2.mp3
+Poniks-MacBook-Air:friends ponikjain$ cd ..
+Poniks-MacBook-Air:~ ponikjain$ cd Music
+Poniks-MacBook-Air:Music ponikjain$ ls
+Audio Music Apps	GarageBand		Music			iTunes
+Poniks-MacBook-Air:Music ponikjain$ cd ..
+Poniks-MacBook-Air:~ ponikjain$ cd family
+Poniks-MacBook-Air:family ponikjain$ ls
+film3.avi	film4.avi	snap3.jpg	snap4.jpg	songs3.mp3	songs4.mp3
+Poniks-MacBook-Air:family ponikjain$ cd ..
+Poniks-MacBook-Air:~ ponikjain$ cd work
+Poniks-MacBook-Air:work ponikjain$ ls
+film5.avi	film6.avi	snap5.jpg	snap6.jpg	songs5.mp3	songs6.mp3
+Poniks-MacBook-Air:work ponikjain$ 
+--------------------------------------------------------------------------------------------------------

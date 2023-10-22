@@ -1,0 +1,86 @@
+1. shell script to display the first 10 natural numbers
+
+#touch nat.sh
+#nano nat.sh
+#cat nat.sh
+echo "Enter number"
+read n
+for (( i=1; i<=$n; i++ ))
+do 
+echo "$i"
+done
+#bash nat.sh
+Enter number
+5
+1
+2
+3
+4
+5
+
+2. Shell script to display n term of natural numbers and their sum
+
+#touch naturalsum.sh
+#nano naturalsum.sh
+#cat naturalsum.sh
+sum=0
+echo "Enter number"
+read n
+for (( i=1; i<=$n; i++ ))
+do 
+sum = sum + $i
+done
+
+echo "$sum"
+#bash naturalsum.sh
+Enter number
+5
+15
+
+3. Shell script to print pattern
+1
+23
+456
+778910
+
+
+#touch pattern1.sh
+#nano pattern1.sh
+#cat pattern1.sh
+number=1
+rows=4
+for((i=1; i<=rows; i++))
+do
+  for((j=1; j<=i; j++))
+  do
+    echo -n "$number"
+    number=$((number + 1))
+  done
+  echo
+done
+#bash pattern1.sh
+1
+23
+456
+78910
+
+4. Shell script to print star pattern 
+
+#touch pattern2.sh
+#nano pattern2.sh
+#cat pattern2.sh
+rows=4
+for((i=1; i<=rows; i++))
+do
+  for((j=1; j<=i; j++))
+  do
+    echo -n "*"
+  done
+  echo
+done
+#bash pattern2.sh
+*
+**
+***
+****
+

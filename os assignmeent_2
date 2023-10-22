@@ -1,0 +1,243 @@
+6. Delete all files in family subdirectory.
+
+Poniks-MacBook-Air:~ ponikjain$ ls
+Applications				cdac form.pdf
+Collect					daemon
+Desktop					eclipse
+Documents				eclipse-workspace
+Downloads				family
+Library					friends
+Movies					go
+Music					marketwatch_symbol_202203051626.sql
+Pictures				marketwatch_symbol_202203051632.csv
+Postman					myscript.sh
+Public					native
+bash_profile				work
+caches					wrapper
+Poniks-MacBook-Air:~ ponikjain$ rm -r family
+Poniks-MacBook-Air:~ ponikjain$ ls
+Applications				cdac form.pdf
+Collect					daemon
+Desktop					eclipse
+Documents				eclipse-workspace
+Downloads				friends
+Library					go
+Movies					marketwatch_symbol_202203051626.sql
+Music					marketwatch_symbol_202203051632.csv
+Pictures				myscript.sh
+Postman					native
+Public					work
+bash_profile				wrapper
+caches
+
+  ------------------------------------------------------------------------------------------------------
+
+
+7. Delete friends subdirectory
+
+Poniks-MacBook-Air:~ ponikjain$ rm -r friends
+Poniks-MacBook-Air:~ ponikjain$ ls
+Applications				caches
+Collect					cdac form.pdf
+Desktop					daemon
+Documents				eclipse
+Downloads				eclipse-workspace
+Library					go
+Movies					marketwatch_symbol_202203051626.sql
+Music					marketwatch_symbol_202203051632.csv
+Pictures				myscript.sh
+Postman					native
+Public					work
+bash_profile				wrapper
+
+--------------------------------------------------------------------------------------------------------
+
+8. Create user tom , bob , sam , prince
+
+ adduser tom
+Adding user `tom' ...
+Adding new group `tom' (1000) ...
+Adding new user `tom' (1000) with group `tom' ...
+Creating home directory `/home/tom' ...
+Copying files from `/etc/skel' ...
+New password: 
+Retype new password: 
+passwd: password updated successfully
+Changing the user information for tom
+Enter the new value, or press ENTER for the default
+	Full Name []: 
+	Room Number []: 
+	Work Phone []: 
+	Home Phone []: 
+	Other []: 
+Is the information correct? [Y/n] 
+# 
+# adduser bob
+Adding user `bob' ...
+Adding new group `bob' (1001) ...
+Adding new user `bob' (1001) with group `bob' ...
+Creating home directory `/home/bob' ...
+Copying files from `/etc/skel' ...
+New password: 
+Retype new password: 
+passwd: password updated successfully
+Changing the user information for bob
+Enter the new value, or press ENTER for the default
+	Full Name []: 
+	Room Number []: 
+	Work Phone []: 
+	Home Phone []: 
+	Other []: 
+Is the information correct? [Y/n] y
+# adduser sam
+Adding user `sam' ...
+Adding new group `sam' (1002) ...
+Adding new user `sam' (1002) with group `sam' ...
+Creating home directory `/home/sam' ...
+Copying files from `/etc/skel' ...
+New password: 
+Retype new password: 
+passwd: password updated successfully
+Changing the user information for sam
+Enter the new value, or press ENTER for the default
+	Full Name []: 
+	Room Number []: 
+	Work Phone []: 
+	Home Phone []: 
+	Other []: 
+Is the information correct? [Y/n] y
+# adduser prince
+Adding user `prince' ...
+Adding new group `prince' (1003) ...
+Adding new user `prince' (1003) with group `prince' ...
+Creating home directory `/home/prince' ...
+Copying files from `/etc/skel' ...
+New password: 
+Retype new password: 
+passwd: password updated successfully
+Changing the user information for prince
+Enter the new value, or press ENTER for the default
+	Full Name []: 
+	Room Number []: 
+	Work Phone []: 
+	Home Phone []: 
+	Other []: 
+Is the information correct? [Y/n] y
+# 
+-------------------------------------------------------------------------------------------------------
+
+9. Create Group dac , dbda ,ditiss
+
+
+Adding group `dbda' (GID 1004) ...
+Done.
+# addgroup dac
+Adding group `dac' (GID 1005) ...
+Done.
+# addgroup ditiss
+Adding group `ditiss' (GID 1006) ...
+Done.
+# 
+
+-------------------------------------------------------------------------------------------------------
+
+
+10. add user
+	
+	Tom in dac
+	Bob in dbda
+	Sam in ditiss
+
+# usermod -a -G dac tom
+ #usermod -a -G dbda bob                  
+# usermod -a -G ditiss sam
+
+prince:x:1003:
+dbda:x:1004:bob
+dac:x:1005:tom
+ditiss:x:1006:sam
+----------------------------------------------------------------------------------------------------
+
+
+11. login as prince and create iacsd directory  in /tmp and create 4 files in iacsd with name project-1 project-2 upto 4
+
+
+# whoami
+root
+# su prince
+prince@fa3829f97cb5:/$ whoami
+prince
+prince@fa3829f97cb5:/$ pwd
+/
+prince@fa3829f97cb5:/$ cd tmp  
+prince@fa3829f97cb5:/tmp$ pwd
+/tmp
+prince@fa3829f97cb5:/tmp$ mkdir iacsd
+prince@fa3829f97cb5:/tmp$ ls
+iacsd
+prince@fa3829f97cb5:/tmp$ cd iacsd
+prince@fa3829f97cb5:/tmp/iacsd$ pwd
+/tmp/iacsd
+prince@fa3829f97cb5:/tmp/iacsd$ touch project1
+prince@fa3829f97cb5:/tmp/iacsd$ touch project2
+prince@fa3829f97cb5:/tmp/iacsd$ touch project3
+prince@fa3829f97cb5:/tmp/iacsd$ touch project4
+-------------------------------------------------------------------------------------------------------
+
+
+12. assign permissions to project files as below
+
+	Project-1 – tom should be owner of this
+	Project-2 – dac should be owner of this
+	Project-3 --- others should not have any permission but tom should have rw access
+	Project-4 – dbda group should have rwx permissions.
+	
+# chown tom project1
+# ls -ltr
+total 0
+-rwxrwxrwx 1 tom    prince 0 Oct  4 17:54 project1
+-rw-rw-r-- 1 prince prince 0 Oct  4 17:54 project2
+-rw-rw-r-- 1 prince prince 0 Oct  4 17:54 project3
+-rw-rw-r-- 1 prince prince 0 Oct  4 17:54 project4
+
+# chgrp dac project2
+# 
+# ls -ltr
+total 0
+-rwxrwxrwx 1 tom    prince 0 Oct  4 17:54 project1
+-rw-rw-r-- 1 prince dac    0 Oct  4 17:54 project2
+-rw-rw-r-- 1 prince prince 0 Oct  4 17:54 project3
+-rw-rw-r-- 1 prince prince 0 Oct  4 17:54 project4
+
+
+#chmod 700 project3
+# ls -ltr 
+total 0
+-rwxrwxrwx 1 tom    prince 0 Oct  4 17:54 project1
+-rw-rw-r-- 1 prince dac    0 Oct  4 17:54 project2
+-rwx------ 1 tom    prince 0 Oct  4 17:54 project3
+-rw-rw-r-- 1 prince prince 0 Oct  4 17:54 project4
+
+#chgrp dbda project4
+# ls -ltr
+total 0
+-rwxrwxrwx 1 tom    prince 0 Oct  4 17:54 project1
+-rw-rw-r-- 1 prince dac    0 Oct  4 17:54 project2
+-rwx------ 1 tom    prince 0 Oct  4 17:54 project3
+-rw-rw-r-- 1 prince dbda   0 Oct  4 17:54 project4
+# chmod 070 project4
+# ls -ltr
+total 0
+-rwxrwxrwx 1 tom    prince 0 Oct  4 17:54 project1
+-rw-rw-r-- 1 prince dac    0 Oct  4 17:54 project2
+-rwx------ 1 tom    prince 0 Oct  4 17:54 project3
+----rwx--- 1 prince dbda   0 Oct  4 17:54 project4
+
+
+-------------------------------------------------------------------------------------------------------
+
+
+ 
+
+
+
